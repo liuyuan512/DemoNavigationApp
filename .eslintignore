@@ -1,0 +1,8 @@
+server
+node_modules
+config
+scripts
+.dll
+build
+src/webConfig.js
+src/components/BIMWINNER/BIMWINNER.viewer.min.js
