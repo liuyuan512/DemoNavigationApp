@@ -8,8 +8,10 @@ import React, { Component } from 'react';
 // import './common.sass';
 // import Layout from './assembly/Layout/index';
 // import Login from './modules/Login/Layout';
-import Search from './components/Search/Search';
-import Submit from './components/Submit/Submit';
+import Search from '../components/Search/Search';
+import Submit from '../components/Submit/Submit';
+import Demo from '../modules/Login';
+
 /**
  * 项目入口
  */
@@ -18,8 +20,7 @@ class AppModule extends Component{
   render(): Object{
     return (
       <div>
-        <Search />
-        <Submit />
+        <Demo />
       </div>
     );
   }

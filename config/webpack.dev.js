@@ -26,7 +26,7 @@ const hotModuleReplacementPlugin = new webpack.HotModuleReplacementPlugin()
 
 
 module.exports = config({
-  entry: './src/app.js',
+  entry: './src/entry/app.js',
   output: {
     path: path.resolve('build'),
     filename: 'bundle.js',
@@ -39,6 +39,7 @@ module.exports = config({
       { // less(for antd)
         test: /^.*\.less$/,
         use: ['style-loader', cssConfig, lessConfig],
+        // include: /^.*\.less$|node_modules/
         // include: /node_modules/
       }
     ]

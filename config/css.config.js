@@ -11,13 +11,13 @@ switch(env){
 }
 
 // 根据当前环境配置css-in-js的name
-   const env = process.env.NODE_ENV;
+const env = process.env.NODE_ENV;
 const name = output(env);
 
 module.exports = {
-loader: 'css-loader',
-options: {
-    modules: true,
-    localIdentName: name
-}
+    loader: 'css-loader',
+    options: {
+        // modules: true,
+        localIdentName: name
+    }
 };

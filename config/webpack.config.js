@@ -40,10 +40,6 @@ function config(options) {
         {
           test: /\.js$/,
           exclude: exclude.js,
-          // exclude: /webConfig.js/,
-          // use: {
-          //   loader: "babel-loader"
-          // }
           use:[babelConfig]
         },
         {

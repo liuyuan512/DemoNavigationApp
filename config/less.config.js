@@ -13,6 +13,7 @@ const modifyVars = {
 module.exports = {
   loader: 'less-loader',
   options: {
-    modifyVars
+    modifyVars,
+    javascriptEnabled: true
   }
 };
