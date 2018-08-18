@@ -31,8 +31,9 @@ const presets = [
       // uglify: false
     }
   ],
+  // "@babel/preset-stage-0",
   '@babel/preset-flow',
-  '@babel/preset-react'
+  '@babel/preset-react',
 ];
 
 const plugins = [
@@ -50,7 +51,8 @@ const plugins = [
       libraryDirectory: 'es',
       style: true
     }
-  ]
+  ],
+  '@babel/plugin-proposal-function-bind'
 ];
 
 // 热替换插件
@@ -61,6 +63,6 @@ module.exports = {
   options: {
     cacheDirectory: path.join(__dirname, '../.babelCache'),
     presets,
-    plugins
+    plugins,
   }
 };

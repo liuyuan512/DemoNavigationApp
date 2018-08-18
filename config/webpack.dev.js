@@ -26,7 +26,7 @@ const hotModuleReplacementPlugin = new webpack.HotModuleReplacementPlugin()
 
 
 module.exports = config({
-  entry: './src/entry/app.js',
+  entry: './src/entry/app.dev.js',
   output: {
     path: path.resolve('build'),
     filename: 'bundle.js',

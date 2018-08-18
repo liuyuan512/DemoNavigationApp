@@ -34,6 +34,7 @@
     upload: bosUrl + bosVersion + '/' + bosKey + '/files',      // 文件上传
     ifc: 'http://binside-alpha.rickricks.com/binside-v1.5.2/ifc/parse?access_token={{ access_token }}&appKey=' + bosKey + '&i={{ i }}',  // 模型解析
     brava: 'http://vizcad00-alpha.rickricks.com/BWview-pj/show.html?fileid={{ fileid }}&token={{ token }}&appKey=' + bosKey ,// 文件预览
-    uodemoWatchedNumber:api+'prototype/uodemoWatchedNumber/'
+    uodemoWatchedNumber:api+'prototype/uodemoWatchedNumber/',
+    uodemoWatchedNumberList:api+'prototype/query/uodemoWatchedNumber?noRelation=true'
   };
 })(window);
