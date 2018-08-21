@@ -1,8 +1,6 @@
 import { Layout, Button, Card, Col, Row, Avatar, Menu, Icon, Breadcrumb } from 'antd';
 const { Header, Footer, Sider, Content }: Object = Layout;
 import React, { Component } from 'react';
-import { login, getDemoWatchednumber, addDemoWatchednumber, getDemoLists } from '../../function.js';
-// import { randomStr } from '../Function';
 import Demo from './demo';
 import style from './demo.less';
 import MyLayout from '../../assembly/Layout/index';
@@ -10,9 +8,8 @@ import MyContent from '../../assembly/Content/index';
 import Login from '../Login';
 import { createSelector, createStructuredSelector } from 'reselect';
 import { bindActionCreators } from 'redux';
-import { demoListInformationRequest } from './store/reducer';
+import { demoListInformationRequest, addVideoPlayTimesRequest } from './store/reducer';
 import { connect } from 'react-redux';
-// import { toJS } from 'immutable';
 import { headers } from '../../function';
 import { Route, Switch } from 'react-router-dom';
 
@@ -20,8 +17,6 @@ import { Route, Switch } from 'react-router-dom';
 
 /* state */
 const getDemoList: Function = ($$state: Immutable.Map): ?Immutable.Map => {
-  // console.log("getDemoList--$$state:",$$state)
-  // console.log("$$state.get('demoList')",$$state.get('demoList'))
   return $$state.has('demoList') ? $$state.get('demoList') : null;
 };
 
@@ -38,7 +33,8 @@ const state: Function = createStructuredSelector({
 /* dispatch */
 const dispatch: Function = (dispatch: Function): Object=>({
   action: bindActionCreators({
-    demoListInformationRequest
+    demoListInformationRequest,
+    addVideoPlayTimesRequest
   }, dispatch)
 });
 
@@ -50,6 +46,7 @@ class DemoList extends Component{
     this.state = {
       demoList: []
     };
+    this.updateVideoPlayTimes = this.updateVideoPlayTimes.bind(this);
   }
 
   componentWillMount(): void{
@@ -95,7 +92,14 @@ class DemoList extends Component{
 
   }
 
+  componentDidUpdate(): void{
+    window.scroll(0, 0);
+    console.log('----');
+  }
 
+  updateVideoPlayTimes(data: Object): Function{
+    return this.props.action.addVideoPlayTimesRequest(data);
+  }
   render(): Object{
     console.log('demolist的props:',this.props);
     const { props } = this;
@@ -114,9 +118,12 @@ class DemoList extends Component{
                 description={item.description}
                 videoLink={item.videoLink}
                 imageLink={item.imageLink}
-                timeOfSupport={item.timeOfSupport}
-                timeOfALable={item.timeOfALable}
+                timeOfSupport={parseInt(item.timeOfSupport)}
+                timeOfALable={parseInt(item.timeOfALable)}
                 aLink={item.aLink}
+                code={item.code}
+                timeOfVideo={parseInt(item.timeOfVideo)}
+                updateVideoPlayTimes={this.updateVideoPlayTimes}
               />
             )
           }

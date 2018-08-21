@@ -32,6 +32,13 @@ export const demoListInformationRequest: Function = request({
   successAction: demoListInformation
 });
 
+export const addVideoPlayTimes: Function = createAction('更新视频播放次数');
+// 更新视频播放次数
+export const addVideoPlayTimesRequest: Function = request({
+  url: window.config.prototype + 'uodemoWatchedNumber/{{ code }}',
+  method: 'PUT'
+  // successAction: demoListInformation
+});
 
 /* reducer */
 const reducer: Function = handleActions({
