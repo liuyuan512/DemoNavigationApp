@@ -95,6 +95,7 @@ class Demo extends Component{
                     <video loop={true}
                       src={props.videoLink}
                       controls="controls"
+                      controlslist="nodownload"
                       poster={props.imageLink}
                       onPlaying={this.onVideoPlay}
                     >
@@ -103,10 +104,9 @@ class Demo extends Component{
                 </Card>
               </Col>
               <Col span={8} style={{ top: '12px' }}>
-                <Card style={{ width: 550 }}
+                <Card className={ 'textCard' }
                   bordered={false}
                   title={props.title}
-                  bodyStyle={{ padding: '6px 24px' }}
                   headStyle={{ fontSize: '55px', borderBottom: '0px' }}
                 >
                   <Meta description={

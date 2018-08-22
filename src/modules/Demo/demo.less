@@ -6,6 +6,9 @@
   font-size: 28px;
   white-space: normal;
 }
+.ant-card-body{
+  padding: 6px 24px;
+}
 .ant-card-meta-detail{
   font-size: 15px;
   line-height: 35px;
@@ -23,9 +26,52 @@
 .ant-card-meta-description{
  color: rgba(102,102,102,1);
 }
+.textCard{
+  //float: none;
+  width: 550px;
+}
 
-@media only screen and (max-width: 450px){
+@media only screen and (max-width: 850px){
   .ant-row{
-    background-color: red;
+    //background-color: red;
   }
+  .textCard{
+    //float: none;
+    width: 300px;
+  }
+  .ant-col-1, .ant-col-2, .ant-col-3, .ant-col-4, .ant-col-5, .ant-col-6, .ant-col-7, .ant-col-8, .ant-col-9, .ant-col-10, .ant-col-11, .ant-col-12, .ant-col-13, .ant-col-14, .ant-col-15, .ant-col-16, .ant-col-17, .ant-col-18, .ant-col-19, .ant-col-20, .ant-col-21, .ant-col-22, .ant-col-23, .ant-col-24{
+    float: none;
+  }
+  .ant-card-cover{
+    //width: 300px;
+  }
+  .ant-col-12{
+    width: 160%;
+  }
+  .ant-card-meta-detail{
+    margin-top: 0;
+    line-height: 25px;
+  }
+  .ant-card-head,.ant-card-body{
+    padding: 0;
+  }
+  .ant-layout-content{
+    padding: 0 50px 5px 0;
+  }
+  .ant-card-head-title{
+    font-size: 20px;
+    white-space: normal;
+  }
+}
+
+video::-internal-media-controls-download-button {
+  display:none;
+}
+
+video::-webkit-media-controls-enclosure {
+  overflow:hidden;
+}
+
+video::-webkit-media-controls-panel {
+  width: calc(100% + 30px);
 }

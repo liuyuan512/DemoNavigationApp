@@ -38,7 +38,7 @@ class MyLayout extends Component{
         <Header style={{ background: '#fff', height: 20 }}>
           <div className="logo" />
         </Header>
-        <Content style={{ padding: '0 50px' }}>
+        <Content>
           <div style={{ background: '#fff', padding: 24, minHeight: 880 }}>
             <Routers />
           </div>
